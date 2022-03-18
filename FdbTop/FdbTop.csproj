@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>net472;net5.0</TargetFrameworks>
+    <TargetFrameworks>net5.0</TargetFrameworks>
     <ProjectGuid>{A1731E5B-59B5-49E0-A9B2-E552B18FA1C6}</ProjectGuid>
     <RestorePackages>true</RestorePackages>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -41,12 +41,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net472" Version="1.0.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
+
 
   <ItemGroup>
     <ProjectReference Include="..\FoundationDB.Client\FoundationDB.Client.csproj" />

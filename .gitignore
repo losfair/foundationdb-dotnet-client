@@ -45,3 +45,5 @@ fdb_c.dll
 
 # OSX
 .DS_Store
+
+/.ionide/

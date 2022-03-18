@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>net472;net5.0</TargetFrameworks>
+    <TargetFrameworks>net5.0</TargetFrameworks>
     <ProjectGuid>{D2EE84C9-0554-40D2-B61F-8FCB4B67CEAA}</ProjectGuid>
     <RestorePackages>true</RestorePackages>
     <RootNamespace>FoundationDB.Samples</RootNamespace>
@@ -37,12 +37,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net472" Version="1.0.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
+
 
   <ItemGroup>
     <ProjectReference Include="..\FoundationDB.Client\FoundationDB.Client.csproj" />

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>net472;net5.0</TargetFrameworks>
+    <TargetFrameworks>net5.0</TargetFrameworks>
     <ProjectGuid>{60C39E7E-E6CD-404B-8F9B-9BABF302AABC}</ProjectGuid>
     <RestorePackages>true</RestorePackages>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -40,10 +40,6 @@
 
   <ItemGroup>
     <PackageReference Include="ILRepack.MSBuild.Task" Version="1.0.9" />
-    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net472" Version="1.0.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.7.0" />
   </ItemGroup>
 

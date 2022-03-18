@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>net472;net5.0</TargetFrameworks>
+    <TargetFrameworks>net5.0</TargetFrameworks>
     <ProjectGuid>{60049BA1-A95F-4127-BAC5-74AF023D3082}</ProjectGuid>
     <RestorePackages>true</RestorePackages>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -39,13 +39,6 @@
 
   <ItemGroup Condition="'$(TargetFramework)'!='net472'">
     <PackageReference Include="System.Diagnostics.PerformanceCounter" Version="4.7.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net472" Version="1.0.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
