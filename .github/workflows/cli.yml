@@ -1,0 +1,50 @@
+name: Release CLI
+
+on:
+- push
+
+jobs:
+  build-linux:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.x
+    - name: Release
+      run: |
+        dotnet publish FdbShell/FdbShell.csproj -c Release -f net5.0 -r linux-x64 --self-contained false
+        dotnet publish FdbTop/FdbTop.csproj -c Release -f net5.0 -r linux-x64 --self-contained false
+        mkdir dist
+        cp ./FdbShell/bin/Release/net5.0/linux-x64/publish/FdbShell ./dist/
+        cp ./FdbTop/bin/Release/net5.0/linux-x64/publish/FdbTop ./dist/
+    - name: Upload
+      uses: actions/upload-artifact@v2
+      with:
+        name: linux-x64
+        path: ./dist
+  release:
+    name: Create release
+    if: startsWith(github.ref, 'refs/tags/')
+    runs-on: ubuntu-20.04
+    needs:
+      - build-linux
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: actions/download-artifact@v2
+        with:
+          name: linux-x64
+          path: ./dist/linux-x64
+      - name: Package
+        run: |
+          cd dist
+          mkdir packages
+          cd linux-x64 && tar -czvf ../packages/linux_x64.tar.gz . && cd ..
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          draft: true
+          files: |
+            dist/packages/linux_x64.tar.gz
